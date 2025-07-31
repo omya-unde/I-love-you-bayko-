@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message For You</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; /* Add some padding for smaller screens */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+            overflow: hidden; /* Prevent scrollbars if animations go slightly out of bounds */
+        }
+
+        /* Custom animation for fading in the main card */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom animation for the floating pulse effect on the "I love you!" text */
+        @keyframes floatPulse {
+            0% { transform: translateY(0px) scale(1); opacity: 1; }
+            50% { transform: translateY(-5px) scale(1.02); opacity: 0.9; }
+            100% { transform: translateY(0px) scale(1); opacity: 1; }
+        }
+
+        /* Apply the fade-in animation to the main container */
+        .animated-card {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* Apply the floating pulse animation to the heading */
+        .animated-heading {
+            animation: floatPulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-md w-full text-center transform transition-transform duration-300 hover:scale-105 animated-card">
+        <!-- Main container with white background, rounded corners, shadow, hover effect, and fade-in animation -->
+        <h1 class="text-4xl md:text-5xl font-bold text-pink-600 mb-6 animated-heading">
+            <!-- Large, bold, pink text for "I love you!" with a custom floating pulse animation -->
+            I love you!
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed">
+            <!-- Slightly smaller, gray text for "Take care!" -->
+            Remember to take good care of yourself.
+        </p>
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mt-2">
+            <!-- Additional message for clarity -->
+            You're important to me.
+        </p>
+    </div>
+</body>
+</html>
